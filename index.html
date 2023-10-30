@@ -5,12 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air Quality</title>
+    <link rel="icon" 
+    href="img/mdb-favicon.ico" 
+    type="image/x-icon" /> 
+<link rel="stylesheet" href= 
+"https://use.fontawesome.com/releases/v5.15.2/css/all.css" /> 
+<link rel="stylesheet" href= 
+"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" /> 
+<link rel="stylesheet" href="css/mdb.min.css" /> 
+<script type="text/javascript" 
+      src="js/mdb.min.js"> 
+</script> 
 </head>
 
 <body>
+    <div class="header">
+        <h1>Site<span class="name">Name</span>
+        </h1>
+        <div>
+            <li>
+                <button onclick="myJavascriptFunction()">Weather</button>
+            </li>
+            <li>
+                <button onclick="myJavascriptFunction()">AQI</button>
+            </li>
+            <li>
+                <button onclick="myJavascriptFunction()">Camping</button>
+            </li>
+        </div>
+    </div>
     <main>
+        <div id="search-container">
+            <input type="text" id="zip-code,city" placeholder=" Zip Code, City">
+            <button id="search-button">Search</button>
+        </div>
 
     </main>
+    <footer>
+        <a href="contact.html">Contact Us</a>
+        <a href="about-us.html">About Us</a>
+    </footer>
 </body>
 
 </html>
