@@ -1,16 +1,30 @@
 
 
-  /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+ 
     .searchbar {
       float: none;
-      display: block;
+      display: flex;
+      flex-direction: column;
       text-align: left;
       width: 100%;
       padding: 14px;
-      position: absolute;
-      left: 30%;
       top: 20%;
+      align-items: center;
+      flex-basis: 200px;
+      gap: 10px 20px;
+      margin-top: 10%;
     }
+
+    
+    .form {
+        display: flex;
+    }
+.brand-logo {
+    margin-left: 5px;
+    font-family: 'Edu TAS Beginner', cursive;
+
+}
+
 
 
   .bg {
@@ -36,11 +50,15 @@
     border-radius: 30px;
     background-color: rgba(230, 230, 230, 0.5);
     box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.25);
+    width: 60%;
   }
 
+ 
+
   .search-icon {
-    width: 47px;
-    height: 47px;
+    width: 45px;
+    height: 45px;
+    position:relative;
   }
 
   ::placeholder {
@@ -52,11 +70,20 @@
     font-style: normal;
     font-weight: 400;
     line-height: 120%; /* 76.8px */
-    letter-spacing: -1.28px;
+    letter-spacing: auto;
   }
 
+  .search-button {
+    display: flex;
+    text-align: left;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 2%;
+  }
 
   footer {
+    float:none;
     display: flex;
     justify-content: center;
     padding: 5px;
@@ -66,4 +93,29 @@
     height: 60px;
     color: #fff;
   }
+
+.mission {
+    display:flex;
+    flex-direction: row;
+   gap:2%;
+   left:10%;
+   width:120%;
+   padding: 5px;
+   position: fixed;
+   bottom: 10%;
+   margin-left: 10%;
+
+   
+}
   
+  /* @media screen and (max-width: 960px) {
+    .searchbar {
+        display:flex;
+    }
+} */
+
+@media screen and (max-width: 960px) {
+    .bg {
+        display:flex;
+    }
+}
