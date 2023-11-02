@@ -1,0 +1,69 @@
+
+
+  /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+    .searchbar {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      padding: 14px;
+      position: absolute;
+      left: 30%;
+      top: 20%;
+    }
+
+
+  .bg {
+    /* The image used */
+    background-image: url("../images/homepage_background.jpg");
+  
+    /* Full height */
+    /* height: 100%;  */
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .navbar {
+    -webkit-box-shadow: None;
+    box-shadow: None;
+  }
+
+  .input-field {
+    display: flex;
+    border-radius: 30px;
+    background-color: rgba(230, 230, 230, 0.5);
+    box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .search-icon {
+    width: 47px;
+    height: 47px;
+  }
+
+  ::placeholder {
+    opacity: 1; /* Firefox */
+    color: #131617;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Newsreader;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 76.8px */
+    letter-spacing: -1.28px;
+  }
+
+
+  footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    color: #fff;
+  }
+  
