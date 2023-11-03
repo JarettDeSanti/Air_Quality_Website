@@ -122,7 +122,15 @@ footer {
 .card-content {
     display: flex;
     align-items: center;
+}
 
+.recommandation-title {
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
     
+
+
+
+
