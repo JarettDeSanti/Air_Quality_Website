@@ -46,6 +46,10 @@ When the search topic I've selected is air quality,
 Then I'm presented with the current AQI 'air quality index' and a map indicating the predicted AQI based on local conditions such as pollution or wildfire smoke. The forcast will be based on the projected prevailing wind patterns.
 
 
+## Collaborators
+
+David Melendez, Xueying Li, Jarett DeSanti
+
 ## Credits
 
 N/A
