@@ -10,7 +10,7 @@ N/A
 
 ## Usage
 
-In order to use this website, the user must enter a city into the search bar and choose either "Weather" to search for current weather, or "Air Quality" to search for the current air quality. The user is then given information regarding current air quality or current weather conditions, based on the topic searched for. The user can also choose to navigate to recommended locations, reviews, or a contact page by clicking on the navigation links provided. 
+In order to use this website, the user must enter a city into the search bar and choose either "Weather", to search for current weather, or "Air Quality", to search for the current air quality. The user is then given information regarding current air quality or current weather conditions, based on the topic searched for. The user can also choose to navigate to recommended locations, reviews, or a contact page by clicking on the navigation links provided. 
 
 ## Links
 
