@@ -3,23 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AirScape</title>
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-    <script type="text/javascript" src="js/mdb.min.js"></script> -->
-
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/mdb.min.css"/>
 </head>
 
 <body class='bg'>
@@ -46,48 +36,30 @@
         </div>
 
         <div class="col s12">
-        <div class="searchbar" id="form">
-            <div class="input-field" style="max-width: 400pt;">
-                <img class="search-icon" src="./assets/images/home_page_search_icon.png">
-                <input type="text" id="zip-code,city" placeholder="Zip Code, City">
-                <div id="searchResults"></div>
+            <div class="searchbar" id="form">
+                <div class="input-field" style="max-width: 400pt;">
+                    <img class="search-icon" src="./assets/images/home_page_search_icon.png">
+                    <input type="text" id="zip-code,city" placeholder="Zip Code, City">
+                    <div id="searchResults"></div>
+                </div>
+                <div class="search-button">
+                    <a class="waves-effect waves-light btn-small" id="weather-button">Weather</a>
+                    <a class="waves-effect waves-light btn-small" id="air-quality-button">Air Quality</a>
+                </div>
             </div>
-            <div class="search-button">
-                <a class="waves-effect waves-light btn-small" id="weather-button">Weater</a>
-                <a class="waves-effect waves-light btn-small" id="air-quality-button">Air Quality</a>
+            <div class="mission">
+                <footer class="grey-text text-darken-2 left">Thank you for visiting our AirScape website! &copy 2023
+                </footer>
+                <script src="./javascript/script.js"></script>
+                <!--JavaScript at end of body for optimized loading-->
             </div>
-        </div>
-        <div class="mission">
-            <header>WHY DO YOU NEED US</header>
-            <main>As human beings and for someone who loves to escape away from where we live. <BR><BR>  
-                In order to verify the condition of your destination,<BR>
-                     we are here to help you find the air quality, <BR>
-                        temperature and weather in the places you want to go.<BR><BR> 
-                        Unlike other website,<BR>
-                         we are trying to make it easy for users to search <BR>
-                         both air quality and weather both on the same site.</main>
-            <footer class="grey-text text-darken-2 left">Thank you for visiting our AirScape website! &copy 2023</footer>
-            <script src="./javascript/script.js"></script>
-            <!--JavaScript at end of body for optimized loading-->
-          </div>
         </div>
     </div>
- 
-    <!-- <div class="mission">
-        <header>WHY DO YOU NEED US</header>
-        <main>As human beings and for someone who loves to escape away from where we live. <BR><BR>  
-            In order to verify the condition of your destination,<BR>
-                 we are here to help you find the air quality, <BR>
-                    temperature and weather in the places you want to go.<BR><BR> 
-                    Unlike other website,<BR>
-                     we are trying to make it easy for users to search <BR>
-                     both air quality and weather both on the same site.</main>
-        <footer class="grey-text text-darken-2 left">Thank you for visiting our AirScape website! &copy 2023</footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="./javascript/script.js"></script>
-        <!--JavaScript at end of body for optimized loading-->
-      </div> 
-   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./javascript/script.js"></script>
+    <!--JavaScript at end of body for optimized loading -->
+
 </body>
 
 </html>
