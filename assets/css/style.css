@@ -1,0 +1,121 @@
+
+
+ 
+    .searchbar {
+      float: none;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      width: 100%;
+      padding: 14px;
+      top: 20%;
+      align-items: center;
+      flex-basis: 200px;
+      gap: 10px 20px;
+      margin-top: 10%;
+    }
+
+    
+    .form {
+        display: flex;
+    }
+.brand-logo {
+    margin-left: 5px;
+    font-family: 'Edu TAS Beginner', cursive;
+
+}
+
+
+
+  .bg {
+    /* The image used */
+    background-image: url("../images/homepage_background.jpg");
+  
+    /* Full height */
+    /* height: 100%;  */
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .navbar {
+    -webkit-box-shadow: None;
+    box-shadow: None;
+  }
+
+  .input-field {
+    display: flex;
+    border-radius: 30px;
+    background-color: rgba(230, 230, 230, 0.5);
+    box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.25);
+    width: 60%;
+  }
+
+ 
+
+  .search-icon {
+    width: 45px;
+    height: 45px;
+    position:relative;
+  }
+
+  ::placeholder {
+    opacity: 1; /* Firefox */
+    color: #131617;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Newsreader;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 76.8px */
+    letter-spacing: auto;
+  }
+
+  .search-button {
+    display: flex;
+    text-align: left;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 2%;
+  }
+
+  footer {
+    float:none;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    color: #fff;
+  }
+
+.mission {
+    display:flex;
+    flex-direction: row;
+   gap:2%;
+   left:10%;
+   width:120%;
+   padding: 5px;
+   position: fixed;
+   bottom: 10%;
+   margin-left: 10%;
+
+   
+}
+  
+  /* @media screen and (max-width: 960px) {
+    .searchbar {
+        display:flex;
+    }
+} */
+
+@media screen and (max-width: 960px) {
+    .bg {
+        display:flex;
+    }
+}
