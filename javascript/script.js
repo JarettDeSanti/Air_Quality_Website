@@ -5,6 +5,7 @@ const container = $('#weather-results')
 const cityInput = $('#city-input');
 const weatherButton = $('#weather-button');
 const toastHTML = '<span>Please enter a valid city or zip code</span>';
+const cities = [];
 
 const makeWeatherCard = (city, temperature, windspeed, humidity, description) => {
   const formattedCityName = city.toUpperCase()
@@ -32,11 +33,11 @@ const makeWeatherCard = (city, temperature, windspeed, humidity, description) =>
 }
 
 const fetchData = city => {
-  fetch (WEATHER_BASE_PATH+city+"&units=imperial&appid="+OPEN_WEATHER_API_KEY).then(function(response){
-  if (response.ok) {
-    return response.json()
-  }
-  }).then(function(data){
+  fetch(WEATHER_BASE_PATH + city + "&units=imperial&appid=" + OPEN_WEATHER_API_KEY).then(function (response) {
+    if (response.ok) {
+      return response.json()
+    }
+  }).then(function (data) {
     const temperature = data.main.temp;
     const windspeed = data.wind.speed;
     const humidity = data.main.humidity;
@@ -45,24 +46,25 @@ const fetchData = city => {
     const weatherCard = makeWeatherCard(city, temperature, windspeed, humidity, description);
     container.append(weatherCard);
     const tabs = document.querySelector(".tabs");
-    M.Tabs.init(tabs,{})
+    M.Tabs.init(tabs, {})
   })
 }
 
 const getWeatherData = event => {
   event.preventDefault();
   const city = cityInput.val();
-  
-  if (!city) {
-    M.toast({html: toastHTML});
+
+  if (!city && !cities.includes(city.toUpperCase())) {
+    M.toast({ html: toastHTML });
     return;
   } else {
+    cities.push(city.toUpperCase());
     fetchData(city);
   }
 }
 
 
-weatherButton.on("click", getWeatherData); 
+weatherButton.on("click", getWeatherData);
 
 
 
@@ -80,18 +82,18 @@ weatherButton.on("click", getWeatherData);
 //     let buttonSelection = $(this).attr("id")
 //     console.log(buttonSelection)
 //   }) 
-  // console.log(queryType)
-  // fetch ("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid="+OPEN_WEATHER_API_KEY).then(function(response){
-  // if (response.ok) {
-  //   return response.json()
-  // }
-  // }).then(function(data){
-  //   console.log(data)
-  // })
+// console.log(queryType)
+// fetch ("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&appid="+OPEN_WEATHER_API_KEY).then(function(response){
+// if (response.ok) {
+//   return response.json()
+// }
+// }).then(function(data){
+//   console.log(data)
+// })
 
-  
-  // const searchPageUrl = "https://jarettdesanti.github.io/Air_Quality_Website/html/search.html";
-  // $(location).attr('href', searchPageUrl);
+
+// const searchPageUrl = "https://jarettdesanti.github.io/Air_Quality_Website/html/search.html";
+// $(location).attr('href', searchPageUrl);
 // });
 
 
@@ -116,6 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-$(':radio').change(function() {
+$(':radio').change(function () {
   console.log('New star rating: ' + this.value);
 });

@@ -35,15 +35,15 @@ Then I'm presented with a clean and easy to navigate site, with the name of the 
 
 When I choose a search topic,
 
-Then I can easily use the provided form input to enter either the city or zipcode of the region I'm interested in.
+Then I can easily use the provided form input to enter the city of the region I'm interested in.
 
 When the search topic I've selected is weather,
 
-Then I'm presented with the weather information, including the current conditions and a projected 5 - 10 day forcast for the city or region that I selected.
+Then I'm presented with the current weather information for the city that I selected.
 
 When the search topic I've selected is air quality,
 
-Then I'm presented with the current AQI 'air quality index' and a map indicating the predicted AQI based on local conditions such as pollution or wildfire smoke. The forcast will be based on the projected prevailing wind patterns.
+Then I'm presented with the current AQI 'air quality index' based on local conditions such as pollution or wildfire smoke. The forcast will be based on the projected prevailing wind patterns.
 
 
 ## Collaborators
