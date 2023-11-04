@@ -39,14 +39,18 @@
             <form class="searchbar" id="form">
                 <div class="input-field" style="max-width: 400pt;">
                     <img class="search-icon" src="./assets/images/home_page_search_icon.png">
-                    <input type="text" id="city" placeholder="Zip Code, City">
+                    <input type="text" id="city-input" placeholder="Zip Code, City">
                     <div id="searchResults"></div>
                 </div>
                 <div class="search-button">
-                    <button data-query="weather" type="submit" class="waves-effect waves-light btn-small" id="weather-button">Weather</button>
-                    <button data-query="air" type="submit" class="waves-effect waves-light btn-small" id="air-quality-button">Air Quality</button>
+                    <button data-query="weather" type="submit" class="waves-effect waves-light btn-small"
+                        id="weather-button">Weather</button>
+                    <button data-query="air" type="submit" class="waves-effect waves-light btn-small"
+                        id="air-quality-button">Air Quality</button>
                 </div>
             </form>
+
+            <div class="container" id="weather-results"></div>
             <footer class="grey-text text-darken-2">Thank you for visiting our AirScape website! &copy 2023
             </footer>
         </div>
