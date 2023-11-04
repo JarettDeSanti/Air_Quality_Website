@@ -23,9 +23,9 @@ const makeWeatherCard = (city, temperature, windspeed, humidity, description) =>
         </ul>
       </div>
       <div class="card-content grey lighten-4">
-        <div id="temperature">${temperature}</div>
-        <div id="wind-speed">${windspeed}</div>
-        <div id="humidity">${humidity}</div>
+        <div id="temperature">${temperature} \u00B0F</div>
+        <div id="wind-speed">${windspeed} MPH</div>
+        <div id="humidity">${humidity} %</div>
         <div id="description">${description}</div>
       </div>
     </div>
