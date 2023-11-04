@@ -119,7 +119,12 @@ const getAirQualityData = event => {
   }
 }
 
-
+$(document).keypress(
+  function(event){
+    if (event.which == '13') {
+      event.preventDefault();
+    }
+});
 
 weatherButton.on("click", getWeatherData);
 airQualityButton.on("click", getAirQualityData);
