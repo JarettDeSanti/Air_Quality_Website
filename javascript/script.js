@@ -4,7 +4,7 @@ const WEATHER_BASE_PATH = "https://api.openweathermap.org/data/2.5/weather?q=";
 const container = $('#weather-results')
 const cityInput = $('#city-input');
 const weatherButton = $('#weather-button');
-const toastHTML = '<span>Please enter a valid city or zip code</span>';
+const toastHTML = '<span>Please enter a valid city!</span>';
 const cities = [];
 
 const makeWeatherCard = (city, temperature, windspeed, humidity, description) => {
