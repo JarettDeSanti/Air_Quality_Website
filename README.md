@@ -19,7 +19,7 @@ Deployed live site URL: https://jarettdesanti.github.io/Air_Quality_Website/
 
 ## Screenshot
 
-![Alt text](AirScape_Homepage.png)
+![Alt text](AirScape_screenshot.png)
 
 ## User Story:
 
