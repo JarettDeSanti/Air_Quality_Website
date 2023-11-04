@@ -4,52 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reviews</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <title>AirScape</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <div class="header">
-        <h1><a href="../index.html">AirScape</a></h1>
-        <div>
-            <li>
-                <a href="./top-pick.html">Recommendations</a>
-            </li>
-            <li>
-                <a href="./contact.html">Contact Us</a>
-            </li>
+    <div class="row">
+        <div class="col s12">
+            <nav class="navbar transparent">
+                <div class="nav-wrapper navbar-color">
+                    <a href="../index.html" class="other-logo nav-black-color">AirScape</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger menu-icon"><i
+                            class="material-icons nav-black-color">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="./top-pick.html" class="nav-black-color">Recommendation Spot</a></li>
+                        <li><a href="./review.html" class="nav-black-color">Reviews</a></li>
+                        <li><a href="./contact.html" class="nav-black-color">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="./top-pick.html" class="nav-black-color">Recommendation Spot</a></li>
+                <li><a href="./review.html" class="nav-black-color">Reviews</a></li>
+                <li><a href="./contact.html" class="nav-black-color">Contact Us</a></li>
+            </ul>
         </div>
     </div>
-    <h2>Leave us a review</h2>
-    <br>
-    <div class="rating">
-        <input type="radio" name="star" /><span class="star"> </span>
-        <input type="radio" name="star" /><span class="star"> </span>
-        <input type="radio" name="star" /><span class="star"> </span>
-        <input type="radio" name="star" /><span class="star"> </span>
-        <input type="radio" name="star" /><span class="star"> </span>
-    </div>
-    <br>
-    <div class="review-box">
-        <h2 class="review-title">Review:</h2>
-        <div class="form-review">
-            <textarea id="comment" placeholder="Type your Email and comment here"></textarea>
+
+    <div class="review-wrapper">
+        <div class="row">
+            <div class="rating-wrapper">
+                <div class="col s12 m5">
+                    <h5>Leave us a review</h5>
+                    <form action="#">
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group1" type="radio" checked />
+                                <span>★★★★★&nbsp;&nbsp;&nbsp;&nbsp;Very Satisfied</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group1" type="radio" />
+                                <span>★★★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Satisfied</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap" class="with-gap" name="group1" type="radio" />
+                                <span>★★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Neutral</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group1" type="radio" />
+                                <span>★★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disatisfied</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input class="with-gap" name="group1" type="radio" />
+                                <span>★&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Very
+                                    Disatisfied</span>
+                            </label>
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="review-card-wrapper">
+                <div class="col s12 m5">
+                    <div class="card">
+                        <div class="card-content">
+                            <form class="container">
+                                <div class="row">
+                                    <div class="input-field col m12">
+                                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                        <label for="textarea1">Review for us</label>
+                                    </div>
+                                    <div class="input-field col m5 offset-m4">
+                                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn-submit">Submit</button>
-        <hr>
-        <br>
-        <fieldset>
-            <textarea class="commentList" rows="10" readonly></textarea>
+
+      
+            <hr>
             <br>
-            <textarea class="commentList" rows="10" readonly></textarea>
-            <br>
-            <textarea class="commentList" rows="10" readonly></textarea>
-        </fieldset>
+            <fieldset>
+                <textarea class="commentList" rows="10" readonly></textarea>
+                <br>
+                <textarea class="commentList" rows="10" readonly></textarea>
+                <br>
+                <textarea class="commentList" rows="10" readonly></textarea>
+            </fieldset>
+        </div>
     </div>
     <hr>
-    <footer>Thank you for visiting our AirScape website! &copy 2023</footer>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"

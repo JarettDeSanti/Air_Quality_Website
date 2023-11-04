@@ -42,7 +42,7 @@
     box-shadow: None;
 }
 
-.input-field {
+.search-input-field {
     display: flex;
     border-radius: 30px;
     background-color: rgba(230, 230, 230, 0.5);
@@ -129,8 +129,8 @@ footer {
     font-family: 'Merriweather Sans', sans-serif;
 }
 
-    
-
-
+.rating-wrapper {
+    margin-left: 10%;
+}
 
 
