@@ -52,10 +52,10 @@ const makeAirQualityCard = (city, airQuality, no2Level, so2Level, pm10Level) => 
         </ul>
       </div>
       <div class="card-content grey lighten-4">
-      <div id="air-quality">AQI = ${airQuality}</div>
-      <div id="nitrogen-dioxide">NITROGEN DIOXIDE(NO2) = ${no2Level}</div>
-      <div id="sulfur-dioxide">SULFUR DIOXIDE(SO2) = ${so2Level}</div>
-      <div id="pm-10">PM10 = ${pm10Level}</div>
+      <div id="air-quality">AQI = ${airQuality} <br><br> *The Air Quality Index (AQI) is used for reporting daily air quality. It tells you how clean or polluted your air is. <br><br>0 - 50: Air quality is satisfactory and poses little or no risk. <br>51 - 100: Air quality is acceptable, however there may be a risk for some people sensitive to air pollution. <br>101 - 150: There may be health effects experienced by sensitive groups. <br>151 - 200: Some members of the general public may experience health effects. <br>201+ : This is considered a serious health alert. The risk is increased for all groups of people.</div>
+      <div id="nitrogen-dioxide">NITROGEN DIOXIDE(NO2) = ${no2Level} <br><br> *Breathing air with a high concentration of NO2 can irritate airways in the human respiratory system. Such exposures over short periods can aggravate respiratory diseases, particularly asthma, leading to respiratory symptoms (such as coughing, wheezing or difficulty breathing).</div>
+      <div id="sulfur-dioxide">SULFUR DIOXIDE(SO2) = ${so2Level} <br><br> *Short-term exposures to SO2 can harm the human respiratory system and make breathing difficult. People with asthma, particularly children, are sensitive to these effects of SO2.</div>
+      <div id="pm-10">PM10 Level = ${pm10Level} <br><br> *PM10 (particle matter with a diameter of 10 microns or less) can include dust from construction sites, landfills, wildfires, pollen, and bacteria. These particles are inhalable into the lungs and can induce adverse health effects. </div>
       </div>
     </div>
   `;
