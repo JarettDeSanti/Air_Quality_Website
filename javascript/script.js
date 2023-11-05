@@ -1,7 +1,7 @@
-const AIR_QUALITY_API_KEY = "303488b11b74e1026f10b3b907eced79";
+const AIR_QUALITY_API_KEY = "43319462c8a346ff8e5ec4097702f70d";
 const OPEN_WEATHER_API_KEY = "94e6bf67634acaba77df3c9e64af09de";
 const WEATHER_BASE_PATH = "https://api.openweathermap.org/data/2.5/weather?q=";
-const AIR_QUALITY_BASE_PATH = "https://api.openweathermap.org/geo/1.0/direct?q=";
+const AIR_QUALITY_BASE_PATH = "https://api.weatherbit.io/v2.0/current/airquality?";
 const containerWeather = $('#weather-results');
 const containerAirQuality = $('#air-quality-results');
 const cityInput = $('#city-input');
@@ -9,6 +9,7 @@ const weatherButton = $('#weather-button');
 const airQualityButton = $('#air-quality-button');
 const toastHTML = '<span>Please enter a valid city!</span>';
 const cities = [];
+
 
 const makeWeatherCard = (city, temperature, windspeed, humidity, description) => {
   const formattedCityName = city.toUpperCase()
@@ -35,7 +36,7 @@ const makeWeatherCard = (city, temperature, windspeed, humidity, description) =>
   `;
 }
 
-const makeAirQualityCard = (city) => {
+const makeAirQualityCard = (city, airQuality, no2Level, so2Level, pm10Level) => {
   const formattedCityName = city.toUpperCase()
   return `
     <div class="card">
@@ -44,11 +45,17 @@ const makeAirQualityCard = (city) => {
       </div>
       <div class="card-tabs">
         <ul class="tabs tabs-fixed-width">
-          <li class="tab"><a class="active" href="#air-quality">Air Quality Index (AQI)</a></li>
+          <li class="tab"><a class="active" href="#air-quality">Air Quality Index</a></li>
+          <li class="tab"><a class="active" href="#nitrogen-dioxide">Nitrogen Dioxide(NO2)</a></li>
+          <li class="tab"><a class="active" href="#sulfur-dioxide">Sulfur Dioxide(SO2)</a></li>
+          <li class="tab"><a class="active" href="#pm-10">PM10</a></li>
         </ul>
       </div>
       <div class="card-content grey lighten-4">
-          
+      <div id="air-quality">AQI = ${airQuality}</div>
+      <div id="nitrogen-dioxide">NITROGEN DIOXIDE(NO2) = ${no2Level}</div>
+      <div id="sulfur-dioxide">SULFUR DIOXIDE(SO2) = ${so2Level}</div>
+      <div id="pm-10">PM10 = ${pm10Level}</div>
       </div>
     </div>
   `;
@@ -56,11 +63,11 @@ const makeAirQualityCard = (city) => {
 
 
 
-const fetchData = city => {
+const fetchDataWeather = city => {
   fetch(WEATHER_BASE_PATH + city + "&units=imperial&appid=" + OPEN_WEATHER_API_KEY).then(function (response) {
     if (response.ok) {
       return response.json()
-    } 
+    }
   }).then(function (data) {
     const temperature = data.main.temp;
     const windspeed = data.wind.speed;
@@ -76,19 +83,21 @@ const fetchData = city => {
 
 
 const fetchDataAirQuality = city => {
-  fetch(AIR_QUALITY_BASE_PATH + city + "&appid=" + AIR_QUALITY_API_KEY)
-  .then(function (response) {
-    if (response.ok) {
-      return response.json()
-    } 
-  }).then(function (data) {
-    const airQuality = data.main;
-
-    const airQualityCard = makeAirQualityCard(city);
-    containerAirQuality.append(airQualityCard);
-    const tabs = document.querySelector(".tabs");
-    M.Tabs.init(tabs, {})
-  })
+  fetch(AIR_QUALITY_BASE_PATH + "&city=" + city + "&units=imperial" + "&key=" + AIR_QUALITY_API_KEY)
+    .then(function (response) {
+      if (response.ok) {
+        return response.json()
+      }
+    }).then(function (data) {
+      const airQuality = data.data[0].aqi;
+      const no2Level = data.data[0].no2;
+      const so2Level = data.data[0].so2;
+      const pm10Level = data.data[0].pm10;
+      const airQualityCard = makeAirQualityCard(city, airQuality, no2Level, so2Level, pm10Level);
+      containerAirQuality.append(airQualityCard);
+      const tabs = document.querySelector(".tabs");
+      M.Tabs.init(tabs, {})
+    })
 }
 
 
@@ -102,7 +111,7 @@ const getWeatherData = event => {
     return;
   } else {
     cities.push(city.toUpperCase());
-    fetchData(city);
+    fetchDataWeather(city);
   }
 }
 
@@ -120,11 +129,12 @@ const getAirQualityData = event => {
 }
 
 $(document).keypress(
-  function(event){
+  function (event) {
     if (event.which == '13') {
       event.preventDefault();
     }
-});
+  });
+
 
 weatherButton.on("click", getWeatherData);
 airQualityButton.on("click", getAirQualityData);
