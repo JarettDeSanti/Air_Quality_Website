@@ -137,7 +137,20 @@ $(document).keypress(
 
 
 weatherButton.on("click", getWeatherData);
+weatherButton.on("click", function(event){
+  event.preventDefault();
+  $(".search-input-field").toggle();
+  $(".search-button").toggle();
+  $("#search-new-city").css("display", "block");
+})
+
 airQualityButton.on("click", getAirQualityData);
+airQualityButton.on("click", function(event){
+  event.preventDefault();
+  $(".search-input-field").toggle();
+  $(".search-button").toggle();
+  $("#search-new-city").css("display", "block");
+})
 
 
 

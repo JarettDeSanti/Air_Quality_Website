@@ -81,6 +81,17 @@
     gap: 2%;
 }
 
+#search-new-link {
+    color: white;
+    position: relative;
+    z-index: 1;
+    padding: 2em;
+    margin: -2em;
+}
+
+#search-new-city {
+    display: none;
+}
 
 footer {
     float: none;
@@ -133,5 +144,3 @@ footer {
 .rating-wrapper {
     margin-left: 10%;
 }
-
-
