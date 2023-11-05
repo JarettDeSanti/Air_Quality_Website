@@ -117,7 +117,10 @@ footer {
 }
 
 #reviews-container {
-    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 800px;
     margin: auto;
 }
 .review {
