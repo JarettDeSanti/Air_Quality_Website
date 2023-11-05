@@ -136,8 +136,58 @@ $(document).keypress(
   });
 
 
+window.onload = function () {
+  loadReviews();
+};
+
+
+function addReview() {
+  let comment = document.getElementById("textarea1").value;
+
+  if (comment) {
+    // Create a review object
+    var review = {
+      comment: comment
+    };
+
+    // Get existing reviews from local storage
+    const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+    // Add the new review to the array
+    reviews.push(review);
+
+    // Save the updated reviews back to local storage
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+
+    // Clear the form
+    document.getElementById("review-form").reset();
+
+    // Reload reviews to update the displayed list
+    loadReviews();
+  }
+}
+
+
+function loadReviews() {
+  let reviewsContainer = document.getElementById("reviews-container");
+  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+  // Clear existing reviews
+  reviewsContainer.innerHTML = "";
+
+  // Display each review
+  reviews.forEach(function (review) {
+    let div = document.createElement("div");
+    div.className = "review";
+    div.innerHTML = review.comment;
+    reviewsContainer.appendChild(div);
+  });
+}
+
+
+
 weatherButton.on("click", getWeatherData);
-weatherButton.on("click", function(event){
+weatherButton.on("click", function (event) {
   event.preventDefault();
   $(".search-input-field").toggle();
   $(".search-button").toggle();
@@ -145,7 +195,7 @@ weatherButton.on("click", function(event){
 })
 
 airQualityButton.on("click", getAirQualityData);
-airQualityButton.on("click", function(event){
+airQualityButton.on("click", function (event) {
   event.preventDefault();
   $(".search-input-field").toggle();
   $(".search-button").toggle();
