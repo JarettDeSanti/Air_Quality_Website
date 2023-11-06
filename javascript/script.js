@@ -1,17 +1,22 @@
+// declare variables first for api keys and urls
 const AIR_QUALITY_API_KEY = "43319462c8a346ff8e5ec4097702f70d";
 const OPEN_WEATHER_API_KEY = "94e6bf67634acaba77df3c9e64af09de";
 const WEATHER_BASE_PATH = "https://api.openweathermap.org/data/2.5/weather?q=";
 const AIR_QUALITY_BASE_PATH = "https://api.weatherbit.io/v2.0/current/airquality?";
+
+// declare variables for weather and air quality containers by grabbing ID from html
 const containerWeather = $('#weather-results');
 const containerAirQuality = $('#air-quality-results');
+
 const cityInput = $('#city-input');
 const weatherButton = $('#weather-button');
 const airQualityButton = $('#air-quality-button');
 const toastHTML = '<span>Please enter a valid city!</span>';
 const cities = [];
 
-
+// creates card for weather and displays the city, temperature, windspeed, humidity, and description to the webpage
 const makeWeatherCard = (city, temperature, windspeed, humidity, description) => {
+  // changes the city name to all uppercase letters
   const formattedCityName = city.toUpperCase()
   return `
     <div class="card">
@@ -36,6 +41,7 @@ const makeWeatherCard = (city, temperature, windspeed, humidity, description) =>
   `;
 }
 
+// creates card for air quality and displays the city, air quality, no2, so2, and PM10 level to the webpage
 const makeAirQualityCard = (city, airQuality, no2Level, so2Level, pm10Level) => {
   const formattedCityName = city.toUpperCase()
   return `
@@ -62,26 +68,28 @@ const makeAirQualityCard = (city, airQuality, no2Level, so2Level, pm10Level) => 
 }
 
 
-
+// function fetches weather data using api/key and returns a response with data
 const fetchDataWeather = city => {
   fetch(WEATHER_BASE_PATH + city + "&units=imperial&appid=" + OPEN_WEATHER_API_KEY).then(function (response) {
     if (response.ok) {
       return response.json()
     }
   }).then(function (data) {
+    // create variables and store all the data we need into those variables
     const temperature = data.main.temp;
     const windspeed = data.wind.speed;
     const humidity = data.main.humidity;
     const description = data.weather[0].description;
 
     const weatherCard = makeWeatherCard(city, temperature, windspeed, humidity, description);
+    // appends the card (with data) to the webpage
     containerWeather.append(weatherCard);
     const tabs = document.querySelector(".tabs");
     M.Tabs.init(tabs, {})
   })
 }
 
-
+// function fetches air quality data using api/key and returns a response with data
 const fetchDataAirQuality = city => {
   fetch(AIR_QUALITY_BASE_PATH + "&city=" + city + "&units=imperial" + "&key=" + AIR_QUALITY_API_KEY)
     .then(function (response) {
@@ -106,6 +114,7 @@ const getWeatherData = event => {
   event.preventDefault();
   const city = cityInput.val();
 
+  // adds "toast" alert to webpage if the search bar is empty when submitted
   if (!city && !cities.includes(city.toUpperCase())) {
     M.toast({ html: toastHTML });
     return;
@@ -119,6 +128,7 @@ const getAirQualityData = event => {
   event.preventDefault();
   const city = cityInput.val();
 
+  // adds "toast" alert to webpage if the search bar is empty when submitted
   if (!city && !cities.includes(city.toUpperCase())) {
     M.toast({ html: toastHTML });
     return;
@@ -128,6 +138,7 @@ const getAirQualityData = event => {
   }
 }
 
+// function for preventing the "Enter" key on the keyboard to submit data
 $(document).keypress(
   function (event) {
     if (event.which == '13') {
@@ -140,7 +151,7 @@ window.onload = function () {
   loadReviews();
 };
 
-
+// function for adding reviews to review page
 function addReview() {
   let comment = document.getElementById("textarea1").value;
 
@@ -185,7 +196,7 @@ function loadReviews() {
 }
 
 
-
+// event listeners for both the weather and air quality buttons
 weatherButton.on("click", getWeatherData);
 weatherButton.on("click", function (event) {
   event.preventDefault();
@@ -210,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var instances = M.Sidenav.init(elems, 'left');
 });
 
-
+// function for radio buttons
 $(':radio').change(function () {
   console.log('New star rating: ' + this.value);
 });
