@@ -15,6 +15,7 @@ In order to use this website, the user must enter a city into the search bar and
 ## Links
 
 Github repository URL: https://github.com/JarettDeSanti/Air_Quality_Website <br>
+Portfolio URL: https://jarettdesanti.github.io/JD_Portfolio/ <br>
 Deployed live site URL: https://jarettdesanti.github.io/Air_Quality_Website/
 
 ## Screenshot
